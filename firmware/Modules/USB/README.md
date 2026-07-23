@@ -1,23 +1,35 @@
-# USB
+# USB Module
 
-Folder ini berisi implementasi USB Device.
+This module contains every USB-related functionality used by OpenMixer.
 
-OpenMixer menggunakan TinyUSB sebagai USB Stack.
+## Architecture
 
-## Features
+```
+usb.c
+    |
+    +-- usb_device
+    +-- usb_control
+    +-- usb_stream
+    +-- usb_audio
+    +-- usb_cdc
+```
 
+## Responsibilities
+
+- USB Peripheral
+- USB Enumeration
 - USB CDC
 - USB Audio Class 2.0
-- Descriptor
-- Endpoint
-- Isochronous Transfer
+- Isochronous Streaming
+- Descriptor Management
+- Endpoint Management
 
-## Goal
+## Current Progress
 
-Membuat OpenMixer dikenali sebagai USB Audio Device tanpa driver tambahan.
-
-Supported OS
-
-- Windows
-- macOS
-- Linux
+- [x] Module Structure
+- [x] Public API
+- [ ] TinyUSB Integration
+- [ ] USB CDC
+- [ ] USB Audio
+- [ ] Audio Streaming
+- [ ] USB Audio Class 2.0 Compliance
