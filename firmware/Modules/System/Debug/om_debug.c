@@ -1,29 +1,31 @@
-#include "debug.h"
+#include "om_debug.h"
 
 #include <stdio.h>
 
-bool debug_init(void)
+bool om_debug_init(void)
 {
     return true;
 }
 
-void debug_log(debug_level_t level, const char *message)
+void om_debug_log(
+    om_debug_level_t level,
+    const char *message)
 {
-#if DEBUG_ENABLE
+#if OM_DEBUG_ENABLE
 
     const char *prefix = "";
 
     switch (level)
     {
-    case DEBUG_LEVEL_INFO:
+    case OM_DEBUG_LEVEL_INFO:
         prefix = "[INFO ]";
         break;
 
-    case DEBUG_LEVEL_WARN:
+    case OM_DEBUG_LEVEL_WARN:
         prefix = "[WARN ]";
         break;
 
-    case DEBUG_LEVEL_ERROR:
+    case OM_DEBUG_LEVEL_ERROR:
         prefix = "[ERROR]";
         break;
 
